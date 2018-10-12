@@ -1,0 +1,81 @@
+<body style="background: #f5f6f6 !important; ">
+	<link rel="stylesheet" type="text/css" href="css/pay.css" />
+	<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/dinggou.css" />
+	<link rel="stylesheet" type="text/css" href="css/dingdan.css" />
+	<link rel="stylesheet" type="text/css" href="css/zhifu.css" />
+	<style type="text/css">
+		.jsContainer {
+			display: none !important;
+		}
+		
+		.toubu {
+			border: none !important;
+		}
+		
+		.img img {
+			padding: 10px 0;
+		}
+		
+		.toubu-centen {
+			padding: 10px 0;
+		}
+		
+		div {
+			display: block;
+		}
+		
+		body {
+			background: url(images/beijing.png) left top repeat-x #F4F8FB !important;
+			font-size: 12px;
+			line-height: 1.5;
+			font-family: "Microsoft YaHei", Arial, Tahoma;
+			color: #0E2644;
+		}
+		
+		.gongxi {
+			border-radius: 4px;
+			box-shadow: 1px 2px 20px rgba(106, 158, 209, 0.34);
+			background-color: #F4F7FE;
+			font-size: 14px;
+			margin-bottom: 30px;
+			*background-color: #FFF;
+			overflow: hidden;
+			position: relative;
+			height: 400px;
+			margin-top: 50px;
+			font-size: 50px;
+			padding: 50px;
+			color: #333333;
+		}
+	</style>
+	<!--顶部导航条-->
+
+	<div class="login" style="display: none;">
+		<div class="gif"><img src="images/20181011161813.gif" /></div>
+	</div>
+	<div class="toubu">
+		<div class="toubu-neibu">
+			<div class="img"><a href="#index"><img src="images/img/logo.png" /></a></div>
+			<div class="toubu-centen">
+				<div class="chengjixinxi">
+					<h5>乘机信息</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5>支付</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5 style="color: #ff7d13;">完成</h5></div>
+			</div>
+		</div>
+	</div>
+	<div class="centera">
+		<div class="gongxi">尊敬的<span class='name' style="margin: 0 10px;"></span>旅客,到达机场请根据身份证件自行取票,感谢您使用海外差旅,祝你旅途愉快。,</div>
+		<a href="#jipiao"><button type="button" class="xiayibu btn" id="xiayibu">返回订票页面</button></a>
+	</div>
+</body>
+<script type="text/javascript">
+	$(function(){
+		var name=window.localStorage.getItem("name");
+		$(".name").text(name);
+	})
+	
+</script>

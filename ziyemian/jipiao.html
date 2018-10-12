@@ -1,0 +1,354 @@
+<body style="background: #f5f6f6 !important; ">
+	<link rel="stylesheet" type="text/css" href="css/pay.css" />
+	<link rel="stylesheet" type="text/css" href="css/jipiao.css" />
+	<script src="js/jipiao.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/dinggou.css" />
+	<script src="js/flatpickr.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/flatpickr.min.css" />
+	<script src="js/shuzu.js" type="text/javascript" charset="utf-8"></script>
+	<!--顶部导航条-->
+
+	<div class="login" style="display: none;">
+	<div class="gif"><img src="images/20181011161813.gif"/></div></div>
+	<nav class="navbar nav navbar-default" style="border: none;position: absolute;background:#FFFFFF;color:#333333;">
+		<div class="contai center-block">
+			<div class="logo col-lg-2 col-sm-3 col-md-2 col-xs-6" style="float: left;"><img src="images/logo.png" height="55px" alt="" /></div>
+			<div class="daohang">
+				<div class="center-block col-lg-7 col-md-6  col-sm-3 col-xs-6 hanbao">
+					<a href="###" class="anniu center-block" onclick="test()"></a>
+				</div>
+				<ul class="daohangtiao col-lg-6 col-md-7 col-sm-4 text-center">
+					<li>
+						<a class="active1" style="color: #00dffc !important;" href="#index">首页</a>
+					</li>
+					<li>
+						<a href="#travel" onclick="haha()">差旅管理方案</a>
+					</li>
+					<li>
+						<a href="#enterprise" onclick="haha()">企业差旅案例</a>
+					</li>
+					<li>
+						<a href="#ticket" onclick="haha()">机票月结服务</a>
+					</li>
+					<li>
+						<a href="#government" onclick="haha()">政府采购</a>
+					</li>
+					<li>
+						<a href="#xinwen" onclick="haha()">新闻动态</a>
+					</li>
+					<li>
+						<a href="#regard" onclick="haha()">关于我们</a>
+					</li>
+					<li>
+						<a   href="#pay" onclick="haha()">支付</a>
+					</li>
+				</ul>
+				<div class="tubiao col-lg-3 col-md-4 col-sm-6 col-xs-6 text-center">
+					<ul class="col-lg-12">
+						<li>
+							<a href=""><img src="images/img/search.png" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="images/img/contactticket.png" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="images/img/qq.png" alt="" /></a>
+						</li>
+						<li>
+							<a href=""><img src="images/img/24phone.png" alt="" /></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--二级菜单-->
+	<div class="container-fluid">
+		<ul class="hanbaoerji text-center">
+			<li>
+				<a style="color: #00dffc;">首页</a>
+			</li>
+			<li>
+				<a>差旅管理方案</a>
+			</li>
+			<li>
+				<a>企业差旅案例</a>
+			</li>
+			<li>
+				<a>机票月结服务</a>
+			</li>
+			<li>
+				<a>政府采购</a>
+			</li>
+			<li>
+				<a>新闻动态</a>
+			</li>
+			<li>
+				<a>关于我们</a>
+			</li>
+			<li>
+				<a>支付</a>
+			</li>
+		</ul>
+	</div>
+	<div class="xuanze">
+		<div class="chufadancheng container">
+			<div class="diyi">
+				<input type="radio" name="jipiao" id="" checked value="" style="margin-right: 5px;" /><span style="margin-right: 20px;">单程</span>
+				<input type="radio" name="jipiao" id="" value="" style="margin-right: 5px;" /><span style="margin-right: 20px;">往返</span>
+				<input type="radio" name="jipiao" id="" value="" style="margin-right: 5px;" /><span style="margin-right: 20px;">多程</span>
+			</div>
+			<div class="chufa col-lg-3">
+				<label for="fromCity">出发城市</label>
+				<div class="flight-group">
+					<div class="flight-group-icon flight-group-icon-plane"></div>
+					<input type="text" class="form-control flight-city cityinput inpu" placeholder="中文/拼音/英文" value="上海" id="homecity_name" name="homecity_name" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Beijing|北京|53@Shanghai|上海|321@Shenzhen|深圳|91@Guangzhou|广州|80@Qingdao|青岛|292@Chengdu|成都|324@Hangzhou|杭州|383@Wuhan|武汉|192@Tianjin|天津|343@Dalian|大连|248@Xiamen|厦门|61@Chongqing|重庆|394@" mod_address_reference="cityid" mod_notice_tip="中文/拼音">
+					<input id="cityid" name="cityid" type="hidden" value="{$cityid}" />
+				</div>
+				<a class="flight-quicksearch-switch" href="#"></a>
+			</div>
+			<a href="#"></a>
+			<div class="chufa col-lg-3">
+				<label for="fromCity">到达城市</label>
+				<div class="flight-group">
+					<div class="flight-group-icon flight-group-icon-plane"></div>
+					<input type="text" class="form-control flight-city inpu" value="重庆" id="getcity_name" name="getcity_name" mod="address|notice" mod_address_source="hotel" mod_address_suggest="@Beijing|北京|53@Shanghai|上海|321@Shenzhen|深圳|91@Guangzhou|广州|80@Qingdao|青岛|292@Chengdu|成都|324@Hangzhou|杭州|383@Wuhan|武汉|192@Tianjin|天津|343@Dalian|大连|248@Xiamen|厦门|61@Chongqing|重庆|394@" mod_address_reference="getcityid" mod_notice_tip="中文/拼音">
+					<input id="getcityid" name="getcityid" type="hidden" value="{$getcityid}" />
+				</div>
+				<a class="flight-quicksearch-switch" href="#"></a>
+			</div>
+			<div class="chufa col-lg-2">
+				<label for="fromCity">去程时间</label>
+				<div class="flight-group">
+					<div class="flight-group-icon flight-group-icon-plane " style="background: url(images/date.png);background-repeat: no-repeat;background-position: center;background-size: 12px auto;"></div>
+					<input type="text" class="form-control flight-city inpu" id="myID2" placeholder="YYYY-MM-DD" value="" autocomplete="off">
+					<input type="hidden" name="fromCity" value="SHA">
+				</div>
+				<a class="flight-quicksearch-switch" href="#"></a>
+			</div>
+
+			<a href="#"></a>
+			<div class="chufa col-lg-2">
+				<label for="fromCity">返程时间</label>
+				<div class="flight-group">
+					<div class="flight-group-icon flight-group-icon-plane" style="background: url(images/date.png);background-repeat: no-repeat;background-position: center;background-size: 12px auto;"></div>
+					<input type="text" class="form-control flight-city inpu" disabled="disabled" id="myID3" placeholder="YYYY-MM-DD" value="" autocomplete="off">
+					<input type="hidden" name="fromCity" value="SHA">
+				</div>
+				<a class="flight-quicksearch-switch" href="#"></a>
+			</div>
+			<div class="chufa col-lg-2">
+				<button type="button" class="btn btn-primary" onclick="openwind()" style="height: 40px;background: #00d6f3;border-color: #00d6f3;margin-top: 30px;">立即搜索</button>
+			</div>
+		</div>
+	</div>
+	<!--主体内容-->
+	<div class="zhifu-content" style="position: relative;">
+		<div class="hangbanhao">
+			<div class="mudidia">
+				<span class="didian"></span><i></i><span class="didian"></span> <span style="margin-left: 20px;" id="shuju"></span>
+			</div>
+			<ul class="flight-list-sort clearfix">
+				<li><span class="flight-list-sort-opt default ac1">默认排序</span></li>
+				<li><span class="flight-list-sort-opt price">价格</span></li>
+			</ul>
+		</div>
+		<div class="moban" id="xuanran">
+			<script type="text/html" id="list">
+				{{each flightInfos as list}}
+				<div class="hangkonggongsi" style="margin-top: 5px;">
+					<div class="hangbana">
+						<h2 class="col-lg-12" style="margin-top: 18px;">{{list.airlineCompany}}</h2>
+						<h2 class="col-lg-12">航班号：{{list.flightNo}}</h2>
+					</div>
+					<div class="shijian" st>
+						<h1 style="color: #333333;font-size: 15px;font-weight: bold;margin-top: 15px;">{{list.tkTime}}</h2>
+    <h2 >{{list.arrivePort}}{{list.arriveBuilding}}</h2>
+     </div>
+    <div class="jiantou"><img src="images/flight_arrow.png" alt="" /></div>
+    <div class="shijian">
+    <h1 style="text-align: left;color: #333333;font-size: 15px;font-weight: bold;margin-top: 15px;">{{list.arTime}}</h2>
+    <h2 style="text-align: left;">{{list.leavePort}}{{list.leaveBuilding}}</h2>
+     </div>
+     <div class="zhundian" >
+    <p style="margin-bottom: 0;margin-top: 15px;">准点率</p>
+    <p>{{list.onTimeRate}}<span>%</span></p>
+     </div>
+      <div class="jiage" >
+    <p style="margin-bottom: 0;margin-top: 15px;">
+    <span>￥</span><a href="" style="color: #FF6600;font-size: 30px;">{{list.lowestPriceInfo.price}}</a></p>
+    <p>{{list.lowestPriceInfo.seatGrade}}{{list.lowestPriceInfo.discount}}<span>折</span></p>
+    </div>
+    <div class="dingpiao">
+    <button type="button" class="btn dingpiaoxitong yudingjipiao" style="border-color: #ff9913;background-color: #FFB000;width: 65px;margin-top: 20px;height: 40px;">订票<span class="id" style="display: none;">{{list.lowestPriceInfo.standardPrice}}</span></button></div>
+	</div>
+	 {{/each}}
+    </script>
+    </div>
+	</div>
+	<!--底部-->
+		<div class='floor'>
+			<div class='floor-top'>
+				<div class="container lianjie">
+				<a href="">友情链接</a>
+				&nbsp; | &nbsp;
+				<a href="">海外商旅</a>
+				<a href="">西安签证中心</a>
+				<a href="">追梦者青海旅游网</a>
+				</div>
+			</div>
+			<div class="container floor-center">
+			<!--底部左边-->
+			<div class="center-left">
+			<dl>
+		    <dt class="dt1">
+		    <div class='center-tubiao'>C</div>
+		    <div class="center-ziti">
+		    <p>联系我们</p>
+		    <p>ontact  us</p>
+		    </div>
+		    </dt>
+		    <dt>
+		    <img src="images/travel/footemail.png" alt="" />
+		    SZ2061@HWXVISA.COM  
+		    </dt>
+		    <dt>
+		    <img src="images/travel/footphone.png" alt="" />
+		    400-6688552   	
+		    </dt>
+		     <dt>
+		    <img src="images/travel/footie.png" alt="" />
+		    www.hwxjp.com 
+		    </dt>
+		     <dt>
+		    <img src="images/travel/footadress.png" alt="" />
+		             广东省深圳市黄阁路天安数码城1期A1204-1 
+		    </dt>
+			</dl>
+			<div class="ftweixincode">
+				<div class="wxcont"> <img src="images/img/5982d160820cd.jpg" width="100%" height="" alt="">
+					<p>扫描二维码</p>
+				</div>
+			</div>
+			</div>
+			<div class="center-right">
+			<dl>
+			<dt>差旅管理方案</dt>
+			<dd><a href="">产品流程设计</a></dd>
+			<dd><a href="">系统解决方案</a></dd>
+			<dd><a href="">一对一客服</a></dd>
+			<dd><a href="">航空公司支持</a></dd>
+			</dl>
+			<dl>
+			<dt>企业差旅案例</dt>
+			<dd><a href="">企业差旅解析</a></dd>
+			<dd><a href="">企业差旅方案</a></dd>
+			<dd><a href="">企业合作伙伴</a></dd>
+			</dl>
+			<dl>
+			<dt>机票月结服务</dt>
+			<dd><a href="">机票月结</a></dd>
+			<dd><a href="">酒店月结</a></dd>
+			<dd><a href="">火车票</a></dd>
+			<dd><a href="">签证业务</a></dd>
+			<dd><a href="">租车</a></dd>
+			</dl>
+			<dl>
+			<dt>政府采购</dt>
+			<dd><a href="">公务员机票</a></dd>
+			<dd><a href="">政采机票资质</a></dd>
+			<dd><a href="">公务员卡</a></dd>
+			<dt>关于我们</dt>
+			<dd><a href="">关于海外</a></dd>
+			<dd><a href="">企业风采</a></dd>
+			<dd><a href="">联系我们</a></dd>
+			</dl>
+				
+			</div>
+			
+			</div>
+		   <div class="floor-btton">
+		   <div class="container">
+		    Copyright © 2017 深圳市海外商务服务有限公司  
+		   </div>
+		   </div>
+		</div>	
+	<div id="jsContainer" class="jsContainer" style="height:0">
+		<div id="tuna_alert" style="display:none;position:absolute;z-index:999;overflow:hidden;"></div>
+		<div id="tuna_jmpinfo" style="visibility:hidden;position:absolute;z-index:120;"></div>
+	</div>
+	<script src="js/fixdiv.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/address.js" type="text/javascript" charset="utf-8"></script>
+</body>
+<script type="text/javascript">
+	$(function(){
+	var ax=new ajx();
+	window.localStorage.removeItem("index");
+	var chufadi=window.localStorage.getItem("kaishi");
+	var daodadi=window.localStorage.getItem("jieshu");
+	var quchengshijian=window.localStorage.getItem("chufashijian");
+	var fanchengshijian=window.localStorage.getItem("fanchengshijian");
+	document.querySelectorAll(".didian")[0].innerHTML=chufadi;
+	document.querySelectorAll(".didian")[1].innerHTML=daodadi;
+	document.querySelectorAll(".flight-city")[0].value=chufadi;
+	document.querySelectorAll(".flight-city")[1].value=daodadi;
+	document.querySelectorAll(".flight-city")[2].value=quchengshijian;
+	if(fanchengshijian!=""){
+	document.querySelectorAll(".flight-city")[3].value=fanchengshijian;	
+	}
+	var chufa=window.localStorage.getItem('num1');
+	var guilai=window.localStorage.getItem('num2');
+	console.log(chufa,guilai)
+	ax.ajxs(chufa,guilai,quchengshijian);
+	
+	
+
+	})
+	var xianzai = new Date();
+	var xianzai1 = xianzai.toLocaleDateString();
+	document.getElementById("myID2").flatpickr({
+			minDate: xianzai1,
+		})
+	document.getElementById("myID3").flatpickr({
+			minDate: xianzai1,
+		})
+	
+	function openwind() {
+		//点击搜索后取得Input里面的值然后判断数组对应的城市编码
+		var chufa = document.querySelectorAll(".inpu")[0].value;
+		var mubiao = document.querySelectorAll(".inpu")[1].value;
+		var chufashijian = document.querySelectorAll(".inpu")[2].value;
+		var fanchengshijian = document.querySelectorAll(".inpu")[3].value;
+		window.localStorage.setItem("kaishi", chufa);
+		window.localStorage.setItem("jieshu", mubiao);
+		if(chufa != "" && mubiao != "" && chufashijian != "") {
+			var chufala = arr.indexOf(chufa);
+			var mubiaoa = arr.indexOf(mubiao);
+			var num1 = list[chufala];
+			var num2 = list[mubiaoa];
+			console.log(num1, num2);
+			if(fanchengshijian != "") {
+				window.localStorage.setItem("num1", num1);
+				window.localStorage.setItem("num2", num2);
+				window.localStorage.setItem("chufashijian", chufashijian);
+				window.localStorage.setItem("fanchengshijian", fanchengshijian);
+			} else {
+				window.localStorage.removeItem("fanchengshijian");
+				window.localStorage.setItem("num1", num1);
+				window.localStorage.setItem("num2", num2);
+				window.localStorage.setItem("chufashijian", chufashijian);
+				window.location.reload();
+			}
+		} else {
+			alert("日期不能为空")
+		}
+	}
+	$(document).on("click",".yudingjipiao",function(){
+	var a=$(this).find("span").text();
+	window.localStorage.setItem("index",a);
+	var b=window.location.hash;
+	window.location.reload();
+	window.location.hash=b+"/dingdan";
+	})
+</script>

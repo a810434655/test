@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jq.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<button onclick="test()">查询</button>
+		<p id="xiashi"></p>
+	</body>
+	<script type="text/javascript">
+		function test() {
+			console.log("111")
+			$.ajax({
+				type: "POST",
+				url: "http://airinfo.market.alicloudapi.com/airInfos",
+				dataType: "json",
+				data: {
+					arrive_code: "BJS",
+					leave_code: "CAN",
+					query_date: "2018-10-11"
+				},
+				success: function(msg) {
+					alert("成功");
+					console.log(msg.flightInfos);
+				},
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("Authorization", "APPCODE 9feeee069b944b1ab9e04e1f2a6afe7c");
+				},
+				error: function(e) {
+					alert("失败", e);
+				}
+			});
+		}
+	</script>
+
+</html>

@@ -1,0 +1,139 @@
+
+.order_info {
+	border-radius: 4px;
+	box-shadow: 1px 2px 20px rgba(106, 158, 209, 0.34);
+	background-color: #F4F7FE;
+	font-size: 14px;
+	margin-bottom: 20px;
+	*background-color: #FFF;
+	overflow: hidden;
+	position: relative;
+}
+
+.centera {
+	width: 1000px;
+	height: auto;
+	margin: 20px auto;
+	
+}
+
+.price_area {
+	width: 320px;
+	float: left;
+	padding: 22px 20px 20px;
+}
+
+.price_h1 {
+	height: 25px;
+	line-height: 25px;
+	color: #0E2644;
+}
+
+.price_num {
+	position: absolute;
+	left: -398px;
+	font-size: 12px;
+	color: #0E2644;
+	bottom: 30px;
+}
+.order_tit {
+    width: 580px;
+    float: right;
+    background-color: #F9FDFF;
+    border-radius: 0 4px 0 0;
+    padding: 22px 20px 20px;
+    position: relative;
+    height: auto!important;
+    min-height: 70px;
+    height: 70px;
+}
+.price_num span {
+	font-size: 14px;
+	color: #FF8C18;
+	padding: 0 5px;
+}
+
+.order_tit h2 {
+    font-size: 18px;
+    color: #0E2644;
+    font-weight: normal;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.order_tit h3 {
+    font-size: 14px;
+    color: #778CA5;
+    font-weight: normal;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.price_s1 i {
+	padding-left: 4px;
+	font-size: 32px;
+}
+
+span,
+i {
+	font-style: normal;
+	color: #FF8C18;
+}
+.tip_area {
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid #E4EEFA;
+    padding: 10px 0;
+    margin: 0 20px;
+    position: relative;
+    font-size: 12px;
+    color: #596D87;
+    zoom: 1;
+}
+.tab{
+    box-shadow: 1px 2px 20px rgba(106,158,209,0.34);
+    background-color: #FFF;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+    height: auto!important;
+    min-height: 360px;
+    height: 360px;
+}
+
+.tab h2{
+    color: #1A314D;
+    font-weight: bold;
+    border-bottom: solid #406493 4px;
+    margin-right: 20px;
+    font-size: 16px;
+    line-height: 50px;
+    cursor: pointer;
+    width: 95px;
+    *float: left;
+    position: relative;
+    height: 50px;
+    vertical-align: bottom;
+    border-bottom: 4px solid transparent;
+    z-index: 1;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.zhifuweixin{
+width: 100%;
+text-align: center;
+height: 400px;
+}
+.zhifuweixin img{
+width: 30%;
+height: 80%;	
+}

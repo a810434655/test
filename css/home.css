@@ -1,0 +1,428 @@
+.nav {
+	width: 100%;
+	max-height: 65px;
+	background: rgba(48, 48, 48, 0.5);
+	position: fixed;
+	z-index: 10000;
+	padding: 0 !important;
+}
+
+.haha {
+	transition: all 1s;
+}
+
+.hangban {
+	position: absolute;
+	z-index: 11;
+	top: 80px;
+	left: 25%;
+	width: 50%;
+	min-height: 239px;
+	margin: 0px auto;
+	padding: 16px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+}
+
+.contai {
+	width: 100%;
+	max-height: 65px;
+}
+
+
+}
+.logo {
+	padding: 5px 0;
+	float: left;
+	margin-right: 5% !important;
+}
+.daohang {
+	height: 50px;
+}
+.daohangtiao {
+	list-style: none;
+	float: left;
+	height: 50px;
+	line-height: 64px;
+}
+.daohangtiao li {
+	float: left;
+	padding-left: 2%;
+	font-size: 1.2em;
+	text-align: center;
+}
+.active1 {
+	color: #00dffc !important;
+	border-bottom: 2px solid #00dffc;
+}
+.daohangtiao>li>a {
+	display: block;
+	cursor: pointer;
+}
+.daohangtiao li a:hover {
+	color: #00dffc !important;
+	border-bottom: 2px solid #00dffc;
+}
+* {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.tubiao {
+	float: right;
+}
+.tubiao ul {
+	float: right;
+	padding: 0;
+}
+.tubiao li {
+	line-height: 64px;
+	float: left;
+	margin-right: 4%;
+	margin-left: 3%;
+}
+.tubiao li a img:hover {
+	opacity: 0.5;
+}
+.hanbao {
+	float: left;
+	height: 100%;
+	margin-top: 13px;
+	display: none;
+}
+.anniu {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url(../images/nav768.png) no-repeat;
+	background-size: 50px 40px;
+}
+@media only screen and (min-width:1200px) {
+	.logo {
+		margin-left: 0px !important;
+		padding: 5px 0 0 3% !important;
+		margin-right: 5%;
+	}
+	
+	.hanbaoerji {
+		display: none !important;
+	}
+}
+@media only screen and (min-width:600px) and (max-width:1199px) {
+	.logo {
+		margin-left: 0px !important;
+		padding: 5px 0 0 0% !important;
+	}
+	
+	.daohangtiao li {
+		float: left;
+		padding-left: 2%;
+		font-size: 0.9em !important;
+		text-align: center;
+	}
+	
+	.contai {
+		width: 100%;
+	}
+	
+	.tubiao {
+		padding: 0 !important;
+	}
+	
+	.anniu {
+		margin-left: 42%;
+	}
+	
+	.hanbao {
+		display: block;
+	}
+	
+	.daohangtiao {
+		display: none;
+	}
+}
+@media only screen and (max-width:600px) {
+	.logo {
+		margin-left: 0px !important;
+		padding: 5px 0 0 0% !important;
+		width: 70% !important;
+	}
+	
+	.contai {
+		width: 100%;
+	}
+	
+	.tubiao {
+		display: none;
+	}
+	
+	.anniu {
+		margin-left: 42%;
+	}
+	
+	.hanbao {
+		display: inline-block;
+		float: right;
+		width: 30% !important;
+	}
+	
+	.daohangtiao {
+		display: none;
+	}
+}
+.hanbaoerji {
+	width: 100%;
+	height: 500px;
+	position: fixed;
+	left: 0px;
+	top: 66px;
+	display: none;
+	z-index: 99999;
+}
+.hanbaoerji li {
+	width: 100%;
+	height: 10%;
+	line-height: 50px;
+	background: rgba(255, 255, 255, 0.5);
+}
+.hanbaoerji li a {
+	color: black;
+	cursor: pointer;
+	font-size: 20px;
+}
+.hanbaoerji li a:hover {
+	color: #00dffc;
+}
+.lunbo {
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+.carousel-caption {
+	position: absolute;
+	bottom: 20%;
+	opacity: 0;
+}
+.xuanzhong {
+	display: block !important;
+	animation: shangfu 2s;
+}
+.carousel-caption p {
+	line-height: 40px;
+}
+@keyframes shangfu {
+	0% {
+		bottom: 15%;
+		opacity: 0;
+	}
+	
+	100% {
+		bottom: 30%;
+		opacity: 1;
+	}
+}
+
+/*第二屏*/
+.TMC {
+	width: 100%;
+	position: absolute;
+	top: 15%;
+	opacity: 0;
+}
+.blue {
+	font-size: 2.5em !important;
+	color: #00dffc;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.TMC p {
+	font-family: "微软雅黑";
+	color: #333;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.canpin {
+	width: 100%;
+	padding: 0 40px;
+	position: relative;
+	top: 10%;
+}
+.animent {
+	float: left;
+}
+.section {
+	width: 100% !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center !important;
+	text-align: center;
+	overflow: hidden;
+}
+.slide {
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center !important;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+h4 {
+	font-size: 28px !important;
+	font-weight: bold;
+	color: #333;
+}
+.jianjie {
+	width: 35%;
+	text-align: left;
+	position: relative;
+	left: 45%;
+	height: 100%;
+	opacity: 0;
+}
+.jianjie h4 {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.jianjie p {
+	line-height: 36px;
+	color: #232323;
+	text-indent: 2rem;
+	word-wrap: break-word;
+	font-size: 16px;
+}
+.padd {
+	width: 100%;
+	height: 20%;
+}
+.daohangtiao li a {
+	color: white !important;
+}
+.chufa {
+	float: left;
+	text-align: left;
+	margin-top: 10px;
+}
+.flight-group {
+	position: relative;
+}
+.flight-group-icon-plane {
+	background-image: url(../images/plane.png);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 34px;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 12px auto;
+	display: block;
+}
+.flight-group input {
+	padding-left: 38px;
+}
+.aaa {
+	position: absolute;
+	z-index: 2;
+	top: 55%;
+	left: 48.6%;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #e5e5e5;
+	background-image: url(../images/switch.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+}
+.a {
+	position: relative;
+	width: 100%;
+	height: 80px;
+}
+.yuan {
+	width: 100%;
+	height: auto;
+}
+.yuan dl {
+	width: 100%;
+	height: 100%;
+}
+.yuan dl dd {
+	float: left;
+}
+.yuan dl dd .yuana {
+	position: relative;
+	z-index: 20;
+	margin: auto;
+	display: inline-block;
+	min-width: 320px;
+	min-height: 320px;
+	background-image: url(../images/index3border.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 400%;
+}
+.beijing {
+	position: absolute;
+	z-index: 20;
+	top: 5%;
+	left: 5%;
+	display: inline-block;
+	background: #ffffff;
+	width: 90%;
+	height: 90%;
+	padding-top: 10%;
+	border-radius: 100%;
+}
+.beijing img{
+	height: 30%;
+}
+.beijing>a h5 {
+	height: 10%;
+	font-size: 18px;
+	color: #00c1db;
+}
+.beijing>a h5 span {
+	color: #f95353;
+}
+.beijing>a p {
+	font-size: 1.3em;
+	width: 90%;
+	margin: 0 15px;
+	margin-bottom: 3%;
+	color: #232323;
+}
+.gosee {
+	display: inline-block;
+	font-size: 0.8rem;
+	width: 40%;
+	text-align: center;
+	height: auto;
+	line-height: 30px;
+	background: #f95353;
+	border-radius: 5px;
+	color: #ffffff;
+}
+.gosee:hover {
+	color: #ffffff;
+}
+@media only screen and (max-width:1200px) {
+.yuan dl dd .yuana {
+	position: relative;
+	z-index: 20;
+	margin: auto;
+	display: inline-block;
+	min-width: 260px;
+	min-height: 260px;
+	background-image: url(../images/index3border.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 400%;
+}
+.beijing>a p{
+	font-size: 16px;
+}
+}

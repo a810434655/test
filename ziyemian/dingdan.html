@@ -1,0 +1,205 @@
+<body style="background: #f5f6f6 !important; ">
+	<link rel="stylesheet" type="text/css" href="css/pay.css" />
+	<link rel="stylesheet" type="text/css" href="css/dingdan.css" />
+	<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/dinggou.css" />
+	<style type="text/css">
+		.jsContainer {
+			display: none !important;
+		}
+		body {
+			background: #eaf0f3 !important;
+		}
+	</style>
+	<!--顶部导航条-->
+
+	<div class="login" style="display: none;">
+		<div class="gif"><img src="images/20181011161813.gif" /></div>
+	</div>
+	<div class="toubu">
+		<div class="toubu-neibu">
+			<div class="img"><img src="images/img/logo.png" /></div>
+			<div class="toubu-centen">
+				<div class="chengjixinxi">
+					<h5 style="color: #ff7d13;">乘机信息</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5>支付</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5>完成</h5></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="zhongjian">
+		<div class="left">
+			<div class="tishi">
+				<h1>您预订的产品不可使用港澳通行证预订。</h1>
+				<h1>该航班预计在扣款成功后20分钟内完成出票，保障出行。</h1>
+				<h1>海外差旅欢迎你,请您在输入用户名后再输入身份证,否则身份证是被禁用的</h1>
+			</div>
+			<div class='chengke'>乘客
+			</div>
+			<div class="yonghu">
+				<input type="text" placeholder="姓名,请与登机证件姓名保持一致" id="name" /><span class="name jianting"></span>
+				<input type="text" disabled placeholder="登机证件号码" id='shenfenzheng' /><span class="shenfenzheng jianting"></span>
+				<input type="text" disabled placeholder="乘机人手机号码(选填)" id="shoujihao" /><span class="haoma jianting"></span>
+			</div>
+			<div class="chengke">联系人</div>
+			<div class="lianxiren">
+				<input type="text" placeholder="联系人手机号码(必填)" id="shoujihaoma" /><span class="lianxirenshouji jianting"></span>
+				<input type="email" placeholder="邮箱" id="email" style="margin-left: 100px;" /><span class="email jianting"></span>
+			</div>
+			<button type="button" class="xiayibu btn" id="xiayibu">下一步</button>
+		</div>
+		<div class="right" id="news">
+			<script type="text/html" id="arr">
+				<div class="didiana">
+					<h3 style="margin-left: 20px;" class="riqi">日期</h3>
+					<h3 class="xianzaidi">北京</h3>
+					<div class="xianzai"><img src="images/7a8e640a96a5de2b185efdd8fd607a90.png" /></div>
+					<h3 class="mubiao">重庆</h3></div>
+				<div class="hangkong"><span class="gongsi" style="margin-left: 68px;">{{#airlineCompany}}</span><span class="hangbana">{{#flightNo}}</span><span class="changwei">经济舱</span></div>
+				<div class="hangcheng">
+					<div class="zuobianshijian">
+						<h3 class="text-right chufas">{{#tkTime}}</h3><span class="text-right chufadidian">{{#leavePort}}{{#leaveBuilding}}</span></div>
+					<div class="tubiao-cente"><img src="images/7a8e640a96a5de2b185efdd8fd607a90.png" /></div>
+					<div class="youbianshijian">
+						<h3 class="text-left fanhuishi">{{#arTime}}</h3><span class="text-left daodadidian">{{#arrivePort}}{{#arriveBuilding}}</span></div>
+				</div>
+				<div class="total-price"><span id="J_totalPrice"><dfn>¥</dfn>{{#lowestPriceInfo.price}}</span></div>
+			</script>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">	
+	$(function() {
+		var num1 = window.localStorage.getItem("num1");
+		var num2 = window.localStorage.getItem("num2");
+		var data = window.localStorage.getItem("chufashijian");
+		$.ajax({
+			type: "POST",
+			url: "http://airinfo.market.alicloudapi.com/airInfos",
+			dataType: "json",
+			data: {
+				arrive_code: num1,
+				leave_code: num2,
+				query_date: data
+			},
+			success: function(msg) {
+				var b = [];
+				var index = window.localStorage.getItem("index");
+				b.push(msg.flightInfos[index]);
+				console.log(b);
+				window.localStorage.setItem("shijianbiao",b[0].arTime);
+				var html = template("arr", b[0]);
+				document.getElementById("news").innerHTML = html;
+				var a = window.localStorage.getItem("chufashijian").slice(5);
+				console.log(a);
+				$(".riqi").text(a);
+				$(".xianzaidi").text(window.localStorage.getItem("kaishi"));
+				$(".mubiao").text(window.localStorage.getItem("jieshu"));
+				var chufashi = $(".chufas").text();
+				$(".chufas").text(chufashi.slice(10));
+				var fanhuishi = $(".fanhuishi").text();
+				$(".fanhuishi").text(fanhuishi.slice(10));
+			},
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader("Authorization", "APPCODE 9feeee069b944b1ab9e04e1f2a6afe7c");
+				$(".login").css("display", "block");
+			},
+			error: function(e) {
+				alert("失败", e);
+			},
+			complete: function() {
+				$(".login").css("display", "none");
+			}
+		});
+	})
+
+	$("#name").keyup(function() {
+		var namez = /^[0-9a-zA-Z\u4e00-\u9fa5_]{2,12}$/;
+		var a = $(this).val();
+		var name = namez.test(a);
+		if(name == true) {
+			$(".name").text("输入正确");
+			$(".name").css("color", "green");
+			$("#shenfenzheng").removeAttr("disabled");
+		} else {
+			$(".name").text("输入错误");
+			$(".name").css("color", "red");
+            $("#shenfenzheng").attr("disabled","disabled");
+		}
+	})
+	$("#shenfenzheng").keyup(function() {
+		var shenfenzs = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/
+		var a = $(this).val();
+		var _this = shenfenzs.test(a);
+		if(_this == true) {
+			$(".shenfenzheng").text("输入正确");
+			$(".shenfenzheng").css("color", "green");
+			$("#shoujihao").removeAttr("disabled");
+		} else {
+			$(".shenfenzheng").text("输入错误");
+			$(".shenfenzheng").css("color", "red");
+			$("#shoujihao").attr("disabled", "disabled");
+		}
+	})
+	$("#shoujihao").keyup(function() {
+		var shoujihao = /^1[34578]\d{9}$/
+		var a = $(this).val();
+		var _this = shoujihao.test(a);
+		if(_this == true) {
+			$(".haoma").text("输入正确");
+			$(".haoma").css("color", "green");
+		} else {
+			$(".haoma").text("输入错误");
+			$(".haoma").css("color", "red");
+		}
+	})
+	$("#shoujihaoma").keyup(function() {
+		var shoujihao = /^1[34578]\d{9}$/
+		var a = $(this).val();
+		var _this = shoujihao.test(a);
+		if(_this == true) {
+			$(".lianxirenshouji").text("输入正确");
+			$(".lianxirenshouji").css("color", "green");
+		} else {
+			$(".lianxirenshouji").text("输入错误");
+			$(".lianxirenshouji").css("color", "red");
+		}
+	})
+	$("#xiayibu").click(function() {
+		var name = $("#name").val();
+		var shenfenzheng = $('#shenfenzheng').val();
+		var lianxirenshouji = $("#shoujihaoma").val();
+		var chufadidian=$(".chufadidian").text();
+		var daodadidian=$(".daodadidian").text();
+		var jiage=$("#J_totalPrice").text();
+		if(name != "") {
+			if(shenfenzheng != "") {
+              if(lianxirenshouji!=""){
+              window.localStorage.setItem("name",name);
+              window.localStorage.setItem("shenfenzheng",shenfenzheng);
+              window.localStorage.setItem("lianxiren",lianxirenshouji);
+              window.localStorage.setItem("chufadidian",chufadidian);
+              window.localStorage.setItem("daodadidian",daodadidian);
+              window.localStorage.setItem("jiage",jiage)
+              var hash=window.location.hash;
+              window.location.hash=hash+"/zhifu";
+              }else{
+             $(".lianxirenshouji").text("不能为空");
+			 $(".lianxirenshouji").css("color", "green");
+			 return;
+              }
+			} else {
+				$(".shenfenzheng").text("不能为空");
+				$(".shenfenzheng").css("color", "green");
+				return;
+			}
+		} else {
+			$(".name").text("不能为空");
+			$(".name").css("color", "red");
+			return;
+		}
+	})
+</script>

@@ -1,0 +1,131 @@
+.travel-chailvtupian {
+	width: 100%;
+    height: 460px;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+@media only screen and (max-width:1560px) {
+	.travel-chailvtupian {
+	height: 360px;
+}
+}
+.travel-wenzi {
+	width: 232px;
+	display: block;
+	padding-top: 148px;
+	margin: auto;
+}
+
+.travel-wenzi h4 {
+	font-size: 36px !important;
+	margin-bottom: 10px;
+	font-weight: normal;
+	line-height: 1.1;
+	color: inherit;
+}
+
+.travel-wenzi p {
+	color: #00dffc;
+	font-weight: bold;
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+
+.travel-container {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.travel-main {
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding-top: 58px;
+}
+
+.travel-main dl dd {
+	width: 100%;
+	height: 240px;
+	background: #ffffff;
+	margin-bottom: 64px;
+	
+}
+.touming{
+opacity: 0;
+}
+
+.dd1 {
+	float: left;
+	width: 30%;
+	height: 100%;
+}
+
+.dd1 img {
+	position: absolute;
+	width: 360px;
+	height: 240px;
+}
+
+.donghua {
+	transition: all 1s;
+	opacity: 1;
+}
+
+.donghua1 {
+	transition: all 1s;
+	opacity: 0;
+}
+
+.dd2 {
+	float: left;
+	max-width: 68%;
+	height: 100%;
+	padding: 0 4%;
+	width: 100%;
+}
+
+.dd2 h3 {
+	height: 70px;
+	font-size: 24px;
+	margin-bottom: 20px;
+	line-height: 70px;
+	font-weight: bold;
+	position: relative;
+	border-bottom: 2px solid #f1f1f1;
+}
+
+.line {
+	width: 10%;
+	background: #00dffc;
+	height: 3px;
+	bottom: -3px;
+	position: absolute;
+	transition: all 1s;
+}
+.d1:hover .dd2:hover .line{
+transition: all 1s;
+width: 100%;
+}
+
+.dd2 p{
+    height: 56px;
+    line-height: 28px;
+    font-size: 16px;
+    margin-bottom: 56px;
+    color: #666666;
+}
+.dd2 a{
+    color: #ffffff;
+    display: block;
+    width: 100px;
+    height: 36px;
+    padding: 0;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;
+    background: #f95353;
+    border-radius: 6px;
+    text-decoration: none;
+}

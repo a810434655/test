@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<script src="js/hanshu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jq.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="css/travel.css" />
+		<link rel="stylesheet" type="text/css" href="css/floo.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	</head>
+	<style type="text/css">
+		a {
+			text-decoration: none !important;
+		}
+	</style>
+
+	<body>
+		<div class="haha" style="height: auto !important;">
+
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var diaoyong = new kaishi();
+		window.onhashchange = hashchange;
+		hashchange();
+
+		function hashchange() {
+			var hash = (window.location.hash).substring(1);
+			window.localStorage.setItem("shouye","#"+hash);
+			diaoyong.panduan(hash);
+		}
+	</script>
+
+</html>

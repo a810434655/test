@@ -1,0 +1,112 @@
+<body style="background: #f5f6f6 !important; ">
+	<link rel="stylesheet" type="text/css" href="css/pay.css" />
+	<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/dinggou.css" />
+	<link rel="stylesheet" type="text/css" href="css/dingdan.css" />
+	<link rel="stylesheet" type="text/css" href="css/zhifu.css" />
+	<style type="text/css">
+		.jsContainer {
+			display: none !important;
+		}
+		
+		.toubu {
+			border: none !important;
+		}
+		
+		.img img {
+			padding: 10px 0;
+		}
+		
+		.toubu-centen {
+			padding: 10px 0;
+		}
+		
+		div {
+			display: block;
+		}
+		
+		body {
+			background: url(images/beijing.png) left top repeat-x #F4F8FB !important;
+			font-size: 12px;
+			line-height: 1.5;
+			font-family: "Microsoft YaHei", Arial, Tahoma;
+			color: #0E2644;
+		}
+	</style>
+	<!--顶部导航条-->
+
+	<div class="login" style="display: none;">
+		<div class="gif"><img src="images/20181011161813.gif" /></div>
+	</div>
+	<div class="toubu">
+		<div class="toubu-neibu">
+			<div class="img"><img src="images/img/logo.png" /></div>
+			<div class="toubu-centen">
+				<div class="chengjixinxi">
+					<h5>乘机信息</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5 style="color: #ff7d13;">支付</h5><img src="images/flight_arrow.png" alt="" /></div>
+				<div class="chengjixinxi">
+					<h5>完成</h5></div>
+			</div>
+		</div>
+	</div>
+	<div class="centera">
+
+		<div class="order_info" style="margin-bottom: 10px;">
+			<!-- S 订单金额 -->
+			<div class="price_area">
+				<div class="price_h1">订单金额<span class="price_s1" style="margin-left: 5px;">¥<i class="jiageooo"></i></span></div>
+			</div>
+			<!-- E 订单金额 -->
+			<!-- S 订单标题 -->
+			<div class="order_tit">
+				<h2> 单程机票&nbsp;&nbsp;<label class="kaishi"></label>- <label class="jieshu"></label></h2>
+				<h3> 去程&nbsp;&nbsp;<label class="chufajichang"></label> - <label class="daodajichang"></label>&nbsp;&nbsp;&nbsp;&nbsp;
+					出发时间：<label for="" class="chufashijian"></label> 	&nbsp;&nbsp;<br>乘机人：<label class="name"></label> 
+					&nbsp;&nbsp;&nbsp;乘机证件：身份证 <label class="shenfenzhengming"></label><br> </h3>
+				<div class="price_num">请在<span>10分钟</span>之内支付订单，超时订单可能会被取消</div> <i class="bg_icon01"></i> </div>
+			<!-- E 订单标题 -->
+			<!-- S 订单详情 -->
+			<!-- E 订单详情 -->
+			<!-- S 提示信息 -->
+			<!-- E 提示信息 -->
+		</div>
+		<div class="tab">
+			<h2>支付方式</h2>
+			<div class="zhifuweixin">
+				<img src="images/pay/QQ图片20181010145410.jpg" />
+				<img src="images/pay/QQ图片20181010145414.jpg" />
+			</div>
+		</div>
+		<a href="#jipiao/dingdan"><button type="button" class="xiayibu btn" >返回修改信息</button></a>
+		<button type="button" class="xiayibu btn" id="xiayibu">下一步</button>
+	</div>
+
+</body>
+<script type="text/javascript">
+	$(function() {
+		var kaishi = window.localStorage.getItem("kaishi");
+		var jieshu = window.localStorage.getItem("jieshu");
+		var chufajichang = window.localStorage.getItem("chufadidian");
+		var daodajichang = window.localStorage.getItem("daodadidian");
+		var chufashijian = window.localStorage.getItem("chufashijian");
+		var name = window.localStorage.getItem("name");
+		var shenfenzhengming = window.localStorage.getItem("shenfenzheng");
+		var jiage=window.localStorage.getItem("jiage").substring(1);
+		$(".kaishi").text(kaishi);
+		$(".jieshu").text(jieshu);
+		$(".chufajichang").text(chufajichang);
+		$(".daodajichang").text(daodajichang);
+		$(".chufashijian").text(chufashijian);
+		$(".name").text(name);
+		$(".shenfenzhengming").text(shenfenzhengming);
+		$(".jiageooo").text(jiage);
+	})
+	$("#xiayibu").click(function(){
+	var b=window.location.hash;
+	window.localStorage.setItem("zhifu",b);
+	window.location.reload();
+	window.location.hash=b+"/wancheng";
+	})
+</script>
